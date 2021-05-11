@@ -1,7 +1,6 @@
 # midyaf
 
-A new Flutter project.
-
+A multi vendor store app
 <img src="Screenshot/1.jpeg" alt="drawing" width="250"/><img src="Screenshot/2.jpeg" alt="drawing" width="250"/>
 <img src="Screenshot/3.jpeg" alt="drawing" width="250"/>
 <img src="Screenshot/4.jpeg" alt="drawing" width="250"/>
