@@ -1,0 +1,153 @@
+
+
+class _OrderCardState extends State<OrderCard> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print("myname");
+
+    print("myname");
+  }
+
+  @override
+  Widget build(
+    BuildContext context,
+  ) {
+    return ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: widget.data2 == null ? 0 : widget.data2['data'].length,
+        itemBuilder: (BuildContext context, int index) {
+          return GestureDetector(
+            onTap: () {},
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
+                  child: Container(
+                    width: 100.0,
+                    height: 18.0,
+                    decoration: BoxDecoration(
+                        color: kWhiteColor,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey[200],
+                            spreadRadius: 5,
+                            blurRadius: 3,
+                            offset: Offset(1, 2),
+                          )
+                        ]),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
+                      child: Row(children: [
+                        CircleAvatar(
+                          child: Text(
+                            widget.data2 == null
+                                ? "0"
+                                : widget.data2['data'][index]['customer_name']
+                                    [0],
+                            style: TextStyle(fontSize: 30, color: Colors.white),
+                          ),
+                          radius: 25,
+                          backgroundColor: Colors.blue,
+                        ),
+                        SizedBox(width: 2.0),
+                        Expanded(
+                          child: Container(
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                        widget.data2 == null
+                                            ? "0"
+                                            : widget.data2['data'][index]
+                                                    ['customer_name']
+                                                .toString()
+                                                .toUpperCase(),
+                                        style: TextStyle(fontSize: 12.0)),
+                                    Spacer(),
+                                    Text(
+                                        widget.data2 == null
+                                            ? "0"
+                                            : widget.data2['data'][index]
+                                                ['service_date'],
+                                        style: TextStyle(
+                                            fontSize: 12.0,
+                                            color: Colors.grey)),
+                                  ],
+                                ),
+                                SizedBox(height: 0.5),
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.location_off,
+                                        size: 14,
+                                      ),
+                                      Text(
+                                          widget.data2 == null
+                                              ? "0"
+                                              : widget.data2['data'][index]
+                                                  ['location'],
+                                          style: TextStyle(fontSize: 11.0)),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 0.5),
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 20.0,
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                          width: 1.5,
+                                        ),
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          widget.data2 == null
+                                              ? "0"
+                                              : widget.orderStatus,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.grey,
+                                              fontSize: 8.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                        '₺' + widget.data2 == null
+                                            ? "0"
+                                            : widget.data2['data'][index]
+                                                ['hourly_rate'],
+                                        style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: kPrimaryColor)),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ]),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
+  }
+}

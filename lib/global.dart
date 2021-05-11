@@ -1,0 +1,10 @@
+var profile;
+var storemain;
+var standing;
+var progress;
+var complete;
+int compleleLength = 0;
+int standingLength = 0;
+int progressLength = 0;
+var customerData;
+var providerdata;
